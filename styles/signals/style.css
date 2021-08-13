@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 1% auto;
+  background-color: #5e5757;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+#form {
+  font-size: 1.5em;
+  width: 30%;
+  margin: 3%;
+  padding: 2%;
+  background-color: #807575;
+  border-radius: 15px;
+}
+
+#form .valCH {
+  background-color: #a09a9a;
+  margin: 2%;
+  padding: 2%;
+  border-radius: 15px;
+}
+
+#form .valCH h3 {
+  text-align: center;
+}
+
+#form .valCH p {
+  margin: 2%;
+  text-align: left;
+}
+
+#form #botonContainer a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  width: 100%;
+}
+
+#form #botonContainer a h4 {
+  background-color: white;
+  text-align: center;
+  color: black;
+  margin: 2%;
+  width: 40%;
+  text-decoration: none;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=style.css.map */

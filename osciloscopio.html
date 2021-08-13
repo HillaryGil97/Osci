@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/osciloscopio/style.css">
+    <title>Osciloscopio</title>
+</head>
+<body>
+    <div class="container" id="visual">
+        <div class="row" id="display">
+            <canvas id="draw" width="450" height="410"></canvas>
+        </div>
+        <div class="row" id="values">
+            <div class="col">
+                <article>
+                    <h3>Voltage/div<br>CH1</h3>
+                    <p class="scale" id="scaleCH1">20 [V]</p>
+                </article>
+            </div>
+            <div class="col">
+                <article>
+                    <h3>Voltage/div<br>CH2</h3>
+                    <p class="scale" id="scaleCH2">20 [V]</p>
+                </article>
+            </div>
+            <div class="col">
+                <article>
+                    <h3>Time/div</h3>
+                    <p class="scale" id="scaleTimer">5 [ms]</p>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="control">
+        <div class="row">
+            <div class="col" id="start">
+                <h4 id="power">Power</h4>
+                <h4 id="auto">AutoSet</h4>
+            </div>
+            <div class="col">
+                <article>
+                    <h4>Focus</h4>
+                    <img  id="focus" src="images/dev/perilla.png" class="perilla" alt="focus">
+                </article>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <article>
+                    <h4>PosY-CH1</h4>
+                    <img id="yPos1" src="images/dev/perilla.png" class="perilla"alt="posY-CH1">
+                </article>
+            </div>
+            <div class="col">
+                <article>
+                    <h4>PosY-CH2</h4>
+                    <img id="yPos2" src="images/dev/perilla.png" class="perilla"alt="posY-CH2">
+                </article>
+            </div>
+            <div class="col">
+                <article>
+                    <h4>PosX</h4>
+                    <img id="xPos" src="images/dev/perilla.png" class="perilla" alt="posX">
+                </article>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <article>
+                    <h4>Voltage/div - CH1</h4>
+                    <img id="volCH1" src="images/dev/perilla.png" class="perilla" alt="voltajeCH1">
+                </article>
+            </div>
+            <div class="col">
+                <article>
+                    <h4>Voltage/div - CH2</h4>
+                    <img id="volCH2"src="images/dev/perilla.png" class="perilla" alt="voltajeCH1">
+                </article>
+            </div>
+            <div class="col">
+                <article>
+                    <h4>Time/div</h4>
+                    <img id="timer" src="images/dev/perilla.png" class="perilla" alt="timer">
+                </article>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col channel">
+                <article>
+                    <h4 id="red">CH1</h4>
+                    <a id=CH1>Off</a>
+                </article>
+            </div>
+            <div class="col channel">
+                <article>
+                    <h4 id="blue">CH2</h4>
+                    <a id="CH2">Off</a>
+                </article>
+            </div>
+        </div>
+    </div>
+    <script src="js/modules/start.js"></script>
+</body>
+</html>
