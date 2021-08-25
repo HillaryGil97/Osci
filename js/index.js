@@ -1,3 +1,5 @@
+//**********************************MODULO PARA GUARDAR LOS VALORES DE LAS SEÑALES
+
 export function getValues(){
     let volCH1 = parseInt(document.getElementById("volCH1").value, 10)
     let frecCH1 = parseInt(document.getElementById("frecCH1").value, 10)
@@ -12,3 +14,4 @@ export function getValues(){
 var start = document.getElementById("boton")
 
 start.addEventListener('click',getValues)
+
