@@ -23,14 +23,24 @@ export function gridBegin(){ //Función para dibujar las lineas de escala del os
     }
 }
 
-export function drawLines(){
-    
+export function drawSignals(){
+    canva.width=canva.width//borrando el display
+    gridBegin()
+    if(configOsci.signals.CH1.ban){
+        //drawSin(valTimer,CH1.vol,xPosition,CH1.posY,nivFocus,CH1.color)
+    }
+    if(configOsci.signals.CH2.ban){
+        drawCH2()
+    }
+}
+
+function drawCH2(){
     //dibujando una linea punteada
     ctx.beginPath();
     ctx.setLineDash([10, 10])
-    ctx.moveTo(0,configOsci.signals.CH2.vol);
-    ctx.lineTo(450,configOsci.signals.CH2.vol);
-    ctx.strokeStyle = 'rgb(0,0,6)'
+    ctx.moveTo(0,configOsci.osci.posYCH2+205);
+    ctx.lineTo(450,configOsci.osci.posYCH2+205);
+    ctx.strokeStyle = 'rgb(0,0,255)'
     ctx.stroke()
 }
 
