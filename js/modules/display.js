@@ -36,8 +36,9 @@ export function drawSignals(){
 
 function drawCH2(){
     let piv = configOsci.osci.posYCH2+205 //para la linea pivote
-    let sign = piv - (configOsci.signals.CH2.vol) //para la señal
-
+    let sign = piv - ((configOsci.signals.CH2.vol*41)/configOsci.osci.scalVolCH2) //para la señal
+    console.log(configOsci)
+    console.log(sign)
     //dibujando gráfica
     ctx.beginPath();
     ctx.moveTo(0,sign);
