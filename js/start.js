@@ -25,9 +25,9 @@ export var configOsci = {
     },
     giro : [0,0,0,0,0,0,0], //orden [focus, yPos1, yPos2, XPos,volCH1,volCH2,timer]
     osci : {
-        scalCH1 : 20,
+        scalVolCH1 : 20,
+        scalVolCH2 : 20,
         scalfrec : 20,
-        scalvolCH2 : 20,
         posYCH1 : 0,
         posYCH2 : 0,
         posX: 0,

@@ -29,17 +29,27 @@ export function drawSignals(){
     if(configOsci.signals.CH1.ban){
         //drawSin(valTimer,CH1.vol,xPosition,CH1.posY,nivFocus,CH1.color)
     }
-    if(configOsci.signals.CH2.ban){
+    if(true){
         drawCH2()
     }
 }
 
 function drawCH2(){
-    //dibujando una linea punteada
+    let piv = configOsci.osci.posYCH2+205 //para la linea pivote
+    let sign = piv - (configOsci.signals.CH2.vol) //para la señal
+
+    //dibujando gráfica
     ctx.beginPath();
-    ctx.setLineDash([10, 10])
-    ctx.moveTo(0,configOsci.osci.posYCH2+205);
-    ctx.lineTo(450,configOsci.osci.posYCH2+205);
+    ctx.moveTo(0,sign);
+    ctx.lineTo(450,sign);
+    ctx.strokeStyle = 'rgb(0,0,255)'
+    ctx.stroke()
+
+    //dibujando una linea de pivote
+    ctx.beginPath();
+    ctx.setLineDash([10, 10])//para que la linea sea punteada
+    ctx.moveTo(0,piv);
+    ctx.lineTo(450,piv);
     ctx.strokeStyle = 'rgb(0,0,255)'
     ctx.stroke()
 }
