@@ -26,23 +26,27 @@ export function gridBegin(){ //Función para dibujar las lineas de escala del os
 export function drawSignals(){
     canva.width=canva.width//borrando el display
     gridBegin()
-    if(configOsci.signals.CH1.ban){
-        //drawSin(valTimer,CH1.vol,xPosition,CH1.posY,nivFocus,CH1.color)
-    }
     if(true){
+        //drawSin(valTimer,CH1.vol,xPosition,CH1.posY,nivFocus,CH1.color)
+        drawCH1()
+    }
+    if(configOsci.signals.CH2.ban){
         drawCH2()
     }
 }
 
+
+
 function drawCH2(){
-    let piv = configOsci.osci.posYCH2+205 //para la linea pivote
+    let piv = configOsci.osci.posYCH2 + 205 //para la linea pivote
     let sign = piv - ((configOsci.signals.CH2.vol*41)/configOsci.osci.scalVolCH2) //para la señal
-    console.log(configOsci)
-    console.log(sign)
+    
     //dibujando gráfica
     ctx.beginPath();
+    ctx.setLineDash([])//para desactivar las lineas punteadas
     ctx.moveTo(0,sign);
     ctx.lineTo(450,sign);
+    ctx.lineWidth = 2;
     ctx.strokeStyle = 'rgb(0,0,255)'
     ctx.stroke()
 
@@ -51,8 +55,37 @@ function drawCH2(){
     ctx.setLineDash([10, 10])//para que la linea sea punteada
     ctx.moveTo(0,piv);
     ctx.lineTo(450,piv);
+    ctx.lineWidth = 2;
     ctx.strokeStyle = 'rgb(0,0,255)'
     ctx.stroke()
 }
 
+
+//FUNCIONES PARA EL CANAL 1
+
+function drawSin(frec,amp,desX, desY, intens, color){//función para dibujar una senoidal
+    console.log()
+    for(let i=0;i<X;i=i+0.05){
+        let ang = (Math.PI*i)/2
+        let funY = amp*Math.sin((ang*frec) + desX)+205+desY
+        ctx.beginPath();
+        ctx.arc(i,funY, intens, 0, Math.PI * 2, true)
+        ctx.strokeStyle = color
+        ctx.stroke();
+    }
+}
+
+function drawCH1(){
+    let piv = configOsci.osci.posYCH1 + 205
+    //dibujando una linea de pivote
+    ctx.beginPath();
+    ctx.setLineDash([10, 10])//para que la linea sea punteada
+    ctx.moveTo(0,piv);
+    ctx.lineTo(450,piv);
+    ctx.strokeStyle = 'rgb(255,0,0)'
+    ctx.stroke()
+
+    //dibujando la señal sinosoidal
+    drawSin(0.09 * 5,41*(1/20)*20,0, piv-205, configOsci.osci.nivFocus, configOsci.signals.CH1.color)
+}
 

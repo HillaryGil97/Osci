@@ -31,6 +31,7 @@ export var configOsci = {
         posYCH1 : 0,
         posYCH2 : 0,
         posX: 0,
+        nivFocus : 0,
     },
     signals : {
         CH1 : {
