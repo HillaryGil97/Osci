@@ -26,8 +26,7 @@ export function gridBegin(){ //Función para dibujar las lineas de escala del os
 export function drawSignals(){
     canva.width=canva.width//borrando el display
     gridBegin()
-    if(true){
-        //drawSin(valTimer,CH1.vol,xPosition,CH1.posY,nivFocus,CH1.color)
+    if(configOsci.signals.CH1.ban){
         drawCH1()
     }
     if(configOsci.signals.CH2.ban){
@@ -77,6 +76,7 @@ function drawSin(frec,amp,desX, desY, intens, color){//función para dibujar una
 
 function drawCH1(){
     let piv = configOsci.osci.posYCH1 + 205
+    let sign = (configOsci.signals.CH1.vol*41)/configOsci.osci.scalVolCH1
     //dibujando una linea de pivote
     ctx.beginPath();
     ctx.setLineDash([10, 10])//para que la linea sea punteada
@@ -86,6 +86,6 @@ function drawCH1(){
     ctx.stroke()
 
     //dibujando la señal sinosoidal
-    drawSin(0.09 * 5,41*(1/20)*20,0, piv-205, configOsci.osci.nivFocus, configOsci.signals.CH1.color)
+    drawSin(0.09 * 5,sign,0, piv-205, configOsci.osci.nivFocus, configOsci.signals.CH1.color)
 }
 

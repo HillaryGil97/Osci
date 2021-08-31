@@ -1,8 +1,8 @@
 import { configOsci } from "../start.js";
 import { gridBegin, canva, drawSignals } from "./display.js";
 import { changeYPosCH2, changeYPosCH1} from "./position.js";
-import { changeVolCH2 } from "./values.js";
-import { activeCH2 } from "./channels.js";
+import { changeVolCH2, changeVolCH1 } from "./values.js";
+import { activeCH2, activeCH1} from "./channels.js";
 
 export function startMe () {
     if(configOsci.clickPower){
@@ -17,10 +17,11 @@ export function startMe () {
 
         //funciones de escala
         
+        configOsci.botones.volCH1.addEventListener('click',changeVolCH1)
         configOsci.botones.volCH2.addEventListener('click',changeVolCH2)
 
         //activación de canales
-        //configOsci.botones.CH1.addEventListener('click', activeCH1)
+        configOsci.botones.CH1.addEventListener('click', activeCH1)
         configOsci.botones.CH2.addEventListener('click', activeCH2)
 
         configOsci.clickPower = false
