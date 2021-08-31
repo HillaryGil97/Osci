@@ -112,3 +112,57 @@ export function changeVolCH2(){
         drawSignals()
     }
 }
+
+export function changeFrecCH1 () {
+    if(!configOsci.clickPower){
+        switch(configOsci.osci.scalfrec){
+            case 5:
+                configOsci.giro[6] = 22.5
+                configOsci.osci.scalfrec = 2
+                scaleTimer.innerHTML = '2 [ms]'
+            break;
+            case 2:
+                configOsci.giro[6] = 45
+                configOsci.osci.scalfrec = 1
+                scaleTimer.innerHTML = '1 [ms]'
+            break;
+            case 1:
+                configOsci.giro[6] = 67.5
+                configOsci.osci.scalfrec = 1/2
+                scaleTimer.innerHTML = '0.5 [ms]'
+            break;
+            case 1/2:
+                configOsci.giro[6] = 90
+                configOsci.osci.scalfrec = 1/5
+                scaleTimer.innerHTML = '0.2 [ms]'
+            break;
+            case 1/5:
+                configOsci.giro[6] = 112.5
+                configOsci.osci.scalfrec = 1/ 10
+                scaleTimer.innerHTML = '0.1 [ms]'
+            break;
+            case 1/10:
+                configOsci.giro[6] = 135
+                configOsci.osci.scalfrec = 1/20
+                scaleTimer.innerHTML = '50 [µs]'
+            break;
+            case 1/20:
+                configOsci.giro[6] = 157.5
+                configOsci.osci.scalfrec = 1/50
+                scaleTimer.innerHTML = '20 [µs]'
+            break;
+            case 1/50:
+                configOsci.giro[6] = 180
+                configOsci.osci.scalfrec = 1/100
+                scaleTimer.innerHTML = '10 [µs]'
+            break;
+            default:
+                configOsci.giro[6] = 0
+                configOsci.osci.scalfrec = 5
+                scaleTimer.innerHTML = '5 [ms]'
+            break;
+        }
+        document.getElementById('timer').style.transform = 'rotate(' + configOsci.giro[6]+ 'deg)'
+        drawSignals()
+    }
+}

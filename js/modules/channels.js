@@ -4,7 +4,7 @@ import { configOsci } from "../start.js"
 const CH1 = document.getElementById('CH1')
 const CH2 = document.getElementById('CH2')
 
-export function activeCH1(){ //función para activar el canal 2
+export function activeCH1(){ //función para activar el canal 1
     if(!configOsci.signals.CH1.ban){
         CH1.style.backgroundColor = 'rgb(36, 161, 89)'
         CH1.style.color = 'black'

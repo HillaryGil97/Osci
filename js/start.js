@@ -1,4 +1,3 @@
-import { gridBegin, drawSignals } from "./modules/display.js"
 import { startMe } from "./modules/control.js"
 
 export var configOsci = {
@@ -27,7 +26,7 @@ export var configOsci = {
     osci : {
         scalVolCH1 : 20,
         scalVolCH2 : 20,
-        scalfrec : 20,
+        scalfrec : 5,
         posYCH1 : 0,
         posYCH2 : 0,
         posX: 0,

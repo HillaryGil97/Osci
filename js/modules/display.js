@@ -6,7 +6,7 @@ var ctx = canva.getContext('2d')
 const X = 450
 const Y = 410
 
-export function gridBegin(){ //Función para dibujar las lineas de escala del osciloscopio
+function gridBegin(){ //Función para dibujar las lineas de escala del osciloscopio
     for(let i=0;i<X;i=i+45){ //para el eje de las Y
         ctx.beginPath();
         ctx.moveTo(i,0);
@@ -33,8 +33,6 @@ export function drawSignals(){
         drawCH2()
     }
 }
-
-
 
 function drawCH2(){
     let piv = configOsci.osci.posYCH2 + 205 //para la linea pivote
@@ -77,6 +75,7 @@ function drawSin(frec,amp,desX, desY, intens, color){//función para dibujar una
 function drawCH1(){
     let piv = configOsci.osci.posYCH1 + 205
     let sign = (configOsci.signals.CH1.vol*41)/configOsci.osci.scalVolCH1
+    let frec = 0.09 * configOsci.osci.scalfrec * configOsci.signals.CH1.frec
     //dibujando una linea de pivote
     ctx.beginPath();
     ctx.setLineDash([10, 10])//para que la linea sea punteada
@@ -86,6 +85,6 @@ function drawCH1(){
     ctx.stroke()
 
     //dibujando la señal sinosoidal
-    drawSin(0.09 * 5,sign,0, piv-205, configOsci.osci.nivFocus, configOsci.signals.CH1.color)
+    drawSin(frec,sign,0, piv-205, configOsci.osci.nivFocus, configOsci.signals.CH1.color)
 }
 
