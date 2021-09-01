@@ -63,7 +63,7 @@ function drawCH2(){
 function drawSin(frec,amp,desX, desY, intens, color){//función para dibujar una senoidal
     console.log()
     for(let i=0;i<X;i=i+0.05){
-        let ang = (Math.PI*i)/2
+        let ang = ((Math.PI*i)/2)/11.25 // el 11.25 es porque solo esta calculando el angulo de un cuarto de la onda, es decir que solo ocupa 1/4 del ancho del cuadrito de unidad
         let funY = amp*Math.sin((ang*frec) + desX)+205+desY
         ctx.beginPath();
         ctx.arc(i,funY, intens, 0, Math.PI * 2, true)
@@ -76,7 +76,7 @@ function drawCH1(){
     let posX = configOsci.osci.posX
     let piv = configOsci.osci.posYCH1 + 205
     let sign = (configOsci.signals.CH1.vol*41)/configOsci.osci.scalVolCH1
-    let frec = 0.1 * configOsci.osci.scalfrec * configOsci.signals.CH1.frec
+    let frec = (configOsci.osci.scalfrec) / configOsci.signals.CH1.frec
     //dibujando una linea de pivote
     ctx.beginPath();
     ctx.setLineDash([10, 10])//para que la linea sea punteada
