@@ -28,3 +28,17 @@ export function changeYPosCH1(){
     document.getElementById('yPos1').style.transform = 'rotate(' + configOsci.giro[1]+ 'deg)'
     drawSignals()
 }
+
+export function changeXPosCH1(){
+    if(!configOsci.clickPower){
+        if(configOsci.osci.posX > -225){
+            configOsci.giro[3] = configOsci.giro[3]+10
+            configOsci.osci.posX = configOsci.osci.posX - 5
+        }else{
+            configOsci.giro[3] = 0
+            configOsci.osci.posX = 225
+        }
+        document.getElementById('xPos').style.transform = 'rotate('+ configOsci.giro[3]+ 'deg)'
+        drawSignals()
+    }
+}

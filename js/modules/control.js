@@ -1,6 +1,6 @@
 import { configOsci } from "../start.js";
 import { canva, drawSignals } from "./display.js";
-import { changeYPosCH2, changeYPosCH1} from "./position.js";
+import { changeYPosCH2, changeYPosCH1, changeXPosCH1} from "./position.js";
 import { changeVolCH2, changeVolCH1, changeFrecCH1} from "./values.js";
 import { activeCH2, activeCH1} from "./channels.js";
 
@@ -13,6 +13,7 @@ export function startMe () {
         //funciones de posición
         configOsci.botones.posYCH1.addEventListener('click',changeYPosCH1)
         configOsci.botones.posYCH2.addEventListener('click',changeYPosCH2)
+        configOsci.botones.posX.addEventListener('click',changeXPosCH1)
 
         //funciones de escala
         configOsci.botones.volCH1.addEventListener('click',changeVolCH1)

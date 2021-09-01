@@ -73,9 +73,10 @@ function drawSin(frec,amp,desX, desY, intens, color){//función para dibujar una
 }
 
 function drawCH1(){
+    let posX = configOsci.osci.posX
     let piv = configOsci.osci.posYCH1 + 205
     let sign = (configOsci.signals.CH1.vol*41)/configOsci.osci.scalVolCH1
-    let frec = 0.09 * configOsci.osci.scalfrec * configOsci.signals.CH1.frec
+    let frec = 0.1 * configOsci.osci.scalfrec * configOsci.signals.CH1.frec
     //dibujando una linea de pivote
     ctx.beginPath();
     ctx.setLineDash([10, 10])//para que la linea sea punteada
@@ -85,6 +86,5 @@ function drawCH1(){
     ctx.stroke()
 
     //dibujando la señal sinosoidal
-    drawSin(frec,sign,0, piv-205, configOsci.osci.nivFocus, configOsci.signals.CH1.color)
+    drawSin(frec,sign,posX, piv-205, configOsci.osci.nivFocus, configOsci.signals.CH1.color)
 }
-
