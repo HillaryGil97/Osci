@@ -34,15 +34,25 @@ export function startMe () {
 function reset () {
     canva.width=canva.width//borrando el display
     configOsci.clickPower = true
+    configOsci.giro = [0,0,0,0,0,0,0]
+    configOsci.osci.scalVolCH1 = 20
+    configOsci.osci.scalVolCH2 = 20
+    configOsci.osci.scalfrec = 5
+    configOsci.osci.posYCH1 = 0
+    configOsci.osci.posYCH2 = 0
+    configOsci.osci.posX = 0
+    configOsci.osci.nivFocus = 1
+    configOsci.signals.CH1.ban = false
+    configOsci.signals.CH2.ban = false
 }
 
 function changeNivFocus(){//Función para aumentar el focus del osciloscopio
     if(!configOsci.clickPower){
         configOsci.giro[0] = configOsci.giro[0] + 10
-        if(configOsci.osci.nivFocus < 0.5)// nivFocus va a llegar solo hasta 0.5 y se regresará a 0 para volverlo a incrementar
-            configOsci.osci.nivFocus = configOsci.osci.nivFocus + 0.02
+        if(configOsci.osci.nivFocus < 3)// nivFocus va a llegar solo hasta 0.5 y se regresará a 0 para volverlo a incrementar
+            configOsci.osci.nivFocus = configOsci.osci.nivFocus + 1
         else{
-            configOsci.osci.nivFocus = 0
+            configOsci.osci.nivFocus = 1
             configOsci.giro[0] = 0
         }
         canva.width=canva.width;

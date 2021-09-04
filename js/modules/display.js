@@ -43,7 +43,7 @@ function drawCH2(){
     ctx.setLineDash([])//para desactivar las lineas punteadas
     ctx.moveTo(0,sign);
     ctx.lineTo(450,sign);
-    ctx.lineWidth = 2;
+    ctx.lineWidth = configOsci.osci.nivFocus;
     ctx.strokeStyle = 'rgb(0,0,255)'
     ctx.stroke()
 
@@ -52,7 +52,7 @@ function drawCH2(){
     ctx.setLineDash([10, 10])//para que la linea sea punteada
     ctx.moveTo(0,piv);
     ctx.lineTo(450,piv);
-    ctx.lineWidth = 2;
+    ctx.lineWidth = configOsci.osci.nivFocus;
     ctx.strokeStyle = 'rgb(0,0,255)'
     ctx.stroke()
 }
@@ -82,9 +82,11 @@ function drawCH1(){
     ctx.setLineDash([10, 10])//para que la linea sea punteada
     ctx.moveTo(0,piv);
     ctx.lineTo(450,piv);
+    ctx.lineWidth = configOsci.osci.nivFocus;
     ctx.strokeStyle = 'rgb(255,0,0)'
     ctx.stroke()
 
     //dibujando la señal sinosoidal
+    ctx.lineWidth = 0;
     drawSin(frec,sign,posX, piv-205, configOsci.osci.nivFocus, configOsci.signals.CH1.color)
 }

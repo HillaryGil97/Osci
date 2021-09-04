@@ -35,7 +35,7 @@ export function changeXPosCH1(){
             configOsci.giro[3] = configOsci.giro[3]+10
             configOsci.osci.posX = configOsci.osci.posX - 5
         }else{
-            configOsci.giro[3] = 0
+            configOsci.giro[3] = 1
             configOsci.osci.posX = 225
         }
         document.getElementById('xPos').style.transform = 'rotate('+ configOsci.giro[3]+ 'deg)'
