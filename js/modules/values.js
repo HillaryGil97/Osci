@@ -166,3 +166,71 @@ export function changeFrecCH1 () {
         drawSignals()
     }
 }
+
+export function autoScale () {
+    //para el voltage del canal 1
+    if (configOsci.signals.CH1.vol >= 20){
+        configOsci.osci.scalVolCH1 = 0.05
+    }else if (configOsci.signals.CH1.vol >= 10){
+        configOsci.osci.scalVolCH1 = 20
+    }else if (configOsci.signals.CH1.vol >= 5){
+        configOsci.osci.scalVolCH1 = 10
+    }else if (configOsci.signals.CH1.vol >= 2){
+        configOsci.osci.scalVolCH1 = 5
+    }else if (configOsci.signals.CH1.vol >= 1){
+        configOsci.osci.scalVolCH1 = 2
+    }else if (configOsci.signals.CH1.vol >= 0.5){
+        configOsci.osci.scalVolCH1 = 1
+    }else if(configOsci.signals.CH1.vol >= 0.2){
+        configOsci.osci.scalVolCH1 = 0.5
+    }else if (configOsci.signals.CH1.vol >= 0.1){
+        configOsci.osci.scalVolCH1 =0.2
+    }else if (configOsci.signals.CH1.vol >= 0.05){
+        configOsci.osci.scalVolCH1 = 0.1
+    }
+
+    //para la frecuncia del canal 1
+    if (configOsci.signals.CH1.frec >= 5){
+        configOsci.osci.scalfrec = 0.01
+    }else if (configOsci.signals.CH1.frec >= 2){
+        configOsci.osci.scalfrec = 5
+    }else if (configOsci.signals.CH1.frec >= 1){
+        configOsci.osci.scalfrec = 2
+    }else if (configOsci.signals.CH1.frec >= 0.5){
+        configOsci.osci.scalfrec = 1
+    }else if (configOsci.signals.CH1.frec >= 0.2){
+        configOsci.osci.scalfrec = 0.5
+    }else if (configOsci.signals.CH1.frec >= 0.1){
+        configOsci.osci.scalfrec = 0.2
+    }else if(configOsci.signals.CH1.frec >= 0.05){
+        configOsci.osci.scalfrec = 0.1
+    }else if (configOsci.signals.CH1.frec >= 0.01){
+        configOsci.osci.scalfrec =0.5
+    }
+
+    //para el voltage del canal2
+    if (configOsci.signals.CH2.vol >= 20){
+        configOsci.osci.scalVolCH2 = 0.05
+    }else if (configOsci.signals.CH2.vol >= 10){
+        configOsci.osci.scalVolCH2 = 20
+    }else if (configOsci.signals.CH2.vol >= 5){
+        configOsci.osci.scalVolCH2 = 10
+    }else if (configOsci.signals.CH2.vol >= 2){
+        configOsci.osci.scalVolCH2 = 5
+    }else if (configOsci.signals.CH2.vol >= 1){
+        configOsci.osci.scalVolCH2 = 2
+    }else if (configOsci.signals.CH2.vol >= 0.5){
+        configOsci.osci.scalVolCH2 = 1
+    }else if(configOsci.signals.CH2.vol >= 0.2){
+        configOsci.osci.scalVolCH2 = 0.5
+    }else if (configOsci.signals.CH2.vol >= 0.1){
+        configOsci.osci.scalVolCH2 =0.2
+    }else if (configOsci.signals.CH2.vol >= 0.05){
+        configOsci.osci.scalVolCH2 = 0.1
+    }
+
+
+    changeVolCH1()
+    changeVolCH2()
+    changeFrecCH1()
+}

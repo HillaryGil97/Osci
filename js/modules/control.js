@@ -1,7 +1,7 @@
 import { configOsci } from "../start.js";
 import { canva, drawSignals } from "./display.js";
 import { changeYPosCH2, changeYPosCH1, changeXPosCH1} from "./position.js";
-import { changeVolCH2, changeVolCH1, changeFrecCH1} from "./values.js";
+import { changeVolCH2, changeVolCH1, changeFrecCH1,autoScale} from "./values.js";
 import { activeCH2, activeCH1} from "./channels.js";
 
 export function startMe () {
@@ -9,6 +9,7 @@ export function startMe () {
         drawSignals()
         //funciones de control
         configOsci.botones.focus.addEventListener('click',changeNivFocus)
+        configOsci.botones.auto.addEventListener('click',autoScale)
 
         //funciones de posición
         configOsci.botones.posYCH1.addEventListener('click',changeYPosCH1)
