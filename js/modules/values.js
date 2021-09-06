@@ -204,8 +204,10 @@ export function autoScale () {
         configOsci.osci.scalfrec = 0.2
     }else if(configOsci.signals.CH1.frec >= 0.05){
         configOsci.osci.scalfrec = 0.1
-    }else if (configOsci.signals.CH1.frec >= 0.01){
-        configOsci.osci.scalfrec =0.5
+    }else if (configOsci.signals.CH1.frec >= 0.02){
+        configOsci.osci.scalfrec =0.05
+    }else if(configOsci.signals.CH1.frec >= 0.01){
+        configOsci.osci.scalfrec=0.02
     }
 
     //para el voltage del canal2

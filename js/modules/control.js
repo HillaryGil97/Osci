@@ -4,6 +4,9 @@ import { changeYPosCH2, changeYPosCH1, changeXPosCH1} from "./position.js";
 import { changeVolCH2, changeVolCH1, changeFrecCH1,autoScale} from "./values.js";
 import { activeCH2, activeCH1} from "./channels.js";
 
+const CH1 = document.getElementById('CH1')
+const CH2 = document.getElementById('CH2')
+
 export function startMe () {
     if(configOsci.clickPower){
         drawSignals()
@@ -45,6 +48,15 @@ function reset () {
     configOsci.osci.nivFocus = 1
     configOsci.signals.CH1.ban = false
     configOsci.signals.CH2.ban = false
+
+    CH1.style.backgroundColor = 'rgb(139, 11, 11)'
+    CH1.style.color = 'white'
+    CH1.innerHTML = 'Off'
+
+    CH2.style.backgroundColor = 'rgb(139, 11, 11)'
+    CH2.style.color = 'white'
+    CH2.innerHTML = 'Off'
+
 }
 
 function changeNivFocus(){//Función para aumentar el focus del osciloscopio
