@@ -1,9 +1,9 @@
 //**********************************MODULO PARA GUARDAR LOS VALORES DE LAS SEÑALES
 
 export function getValues(){
-    let volCH1 = parseInt(document.getElementById("volCH1").value, 10)
-    let frecCH1 = parseInt(document.getElementById("frecCH1").value, 10)
-    let volCH2 = parseInt(document.getElementById("volCH2").value, 10)
+    let volCH1 = parseFloat(document.getElementById("volCH1").value)
+    let frecCH1 = parseFloat(document.getElementById("frecCH1").value)
+    let volCH2 = parseFloat(document.getElementById("volCH2").value)
 
     //guardando las variables de manera local
     localStorage.setItem('volCH1',volCH1)
